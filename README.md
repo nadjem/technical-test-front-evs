@@ -193,6 +193,6 @@ Bonne chance !
 
 ### lancer l'application
  depuis le dossier root 
-```
+```cmd
 docker-compose up --build
-'''
+```

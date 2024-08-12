@@ -190,3 +190,9 @@ services:
 4. **Conteneurisation :** L'application est correctement conteneurisée et peut être lancée avec Docker Compose.
 
 Bonne chance !
+
+### lancer l'application
+ depuis le dossier root 
+```
+docker-compose up --build
+'''

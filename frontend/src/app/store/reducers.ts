@@ -31,7 +31,7 @@ export const itemReducer = createReducer(
     loading: false,
     error: error
   })),
-  on(ItemAction.addItems, (state, { data }) => ({
+  on(ItemAction.addItem, (state, { data }) => ({
     ...state,
     data: [...state.data, data],
     loading: false,

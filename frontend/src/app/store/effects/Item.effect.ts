@@ -25,4 +25,20 @@ export class ItemEffects {
     )
   );
 
+  addItem$ = createEffect(() =>
+
+    this.actions$.pipe(
+      ofType(ItemAction.addItem),
+      mergeMap((action) => {
+          return this.itemService.addItem(action.data).pipe(
+            map((data: Item) => ItemAction.addItemSuccess({data}),),
+            catchError((error) =>
+              of(ItemAction.addItemFailure({error: error.message}))
+            )
+          );
+        }
+      )
+    )
+  );
+
 }

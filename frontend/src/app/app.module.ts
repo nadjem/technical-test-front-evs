@@ -12,12 +12,15 @@ import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 import {itemReducer} from "./store/reducers";
 import {ItemEffects} from "./store/effects/Item.effect";
 import { ReactiveFormsModule } from '@angular/forms';
+import {ItemFormComponent} from "./components/item-form/item-form.component";
+import {SharedModule} from "./SharedModule";
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -25,12 +28,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     StoreModule.forRoot({items:itemReducer}),
     EffectsModule.forRoot([ItemEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25}),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ],
   providers: [
     provideHttpClient()
   ],
   exports: [
+
   ],
   bootstrap: [AppComponent]
 })

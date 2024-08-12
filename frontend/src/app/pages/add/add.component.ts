@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './add.component.scss'
 })
 export class AddComponent {
-
+  constructor() {
+    console.log("loaded")
+  }
 }

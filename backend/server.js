@@ -26,6 +26,7 @@ app.get('/api/items', (req, res) => {
 
 app.post('/api/items', (req, res) => {
     const newItem = req.body;
+    newItem.id = items.length;
     items.push(newItem);
     res.status(201).json(newItem);
 });

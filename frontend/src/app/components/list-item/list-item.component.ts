@@ -12,11 +12,12 @@ export class ListItemComponent implements OnInit {
   private store = inject(Store)
   items$: Observable<Item[]> = this.store.select(state => state.items.data);
   isLoading$: Observable<boolean> = this.store.select(state => state.items.loading);
-
   ngOnInit() {
     this.loadItems();
   }
   loadItems() {
     this.store.dispatch(ItemAction.loadItems());
   }
+
+  protected readonly Array = Array;
 }

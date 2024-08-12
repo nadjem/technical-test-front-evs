@@ -15,4 +15,7 @@ export class ItemsService {
     return this.http.get<Item[]>('http://localhost:3000/api/items');
   }
 
+  addItem(item: Item): Observable<Item> {
+    return this.http.post<Item>('http://localhost:3000/api/items', item);
+  }
 }

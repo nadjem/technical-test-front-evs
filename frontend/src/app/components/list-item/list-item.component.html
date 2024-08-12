@@ -1,21 +1,34 @@
 <!--list of item [{username:'xxxx', email:"a@g.com"}]-->
 <div class="p-20">
-    <div class="flex flex-row justify-between items-center border p-2">
+    <div class="flex flex-row justify-between items-center border-2 border-gray-600 border-b-0 p-2">
       <h1 class="text-2xl font-bold">List of Items</h1>
       <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
         Quick Add Item
       </button>
     </div>
-  <div class="flex flex-row justify-between items-center border p-2">
+  <div class="flex flex-row justify-between items-center border-2 border-gray-600">
     <ul class="w-full">
-      <li class="w-full">
+      <li class="w-full border-b-2 border-gray-600 bg-gray-200">
         <div class="w-full flex justify-start items-center">
-          <p class="border-r p-4">username</p>
-          <p class="border-r p-4">email</p>
+          <p class="border-r border-gray-600 p-4 w-1/4">username</p>
+          <p class="border-r border-gray-600 p-4 w-1/3">email</p>
         </div>
       </li>
+      @for (item of items$ | async; track item.id){
+        <li class="w-full">
+          <div class="w-full flex justify-start items-center border-b">
+            <p class="border-r  p-4 w-1/4">{{ item.username }}</p>
+            <p class="border-r p-4 w-1/3">{{ item.email }}</p>
+          </div>
+        </li>
+      }
+
 
     </ul>
+  </div>
+
+  <div class="flex flex-row justify-between items-center border border-gray-600 p-2 mt-2 shadow-md rounded min-h-32">
+    <app-item-form />
   </div>
 
 </div>
